@@ -1,4 +1,4 @@
-**Image Description Web Application**
+⁷**Image Description Web Application**
 
 **Overview**
 
@@ -17,6 +17,7 @@ This application provides the following features:
 **Image Display**: The uploaded image is displayed on the web page.
 
 **API Endpoints**
+
 POST /upload
 Description: Handles image upload, processes it, and returns a description.
 Request: A POST request containing the image file.
@@ -28,6 +29,7 @@ Response: JSON containing the description of the image and the image URL. Exampl
 }
 
 **Deployment**
+
 Cloud Deployment
 Deploy the app in render.
 Live website link - https://img-descr-arogo.onrender.com/
