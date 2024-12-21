@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Description App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Image Description Generator</h1>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" required>
+                <button type="submit">Upload Image</button>
+            </form>
+            <div class="imgcontainer">
+                <img id="uploadedImage" src="" alt="Uploaded Image">
+            </div>
+            <p id="description"></p>
+        </div>
+        <footer>Created with ❤️ by Nidhi Kadam</footer>
+    </div>
+
+    <script>
+        document.getElementById("uploadForm").onsubmit = async function (e) {
+            e.preventDefault();
+            const fileInput = document.getElementById("fileInput");
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            // Send image to backend
+            const response = await fetch("/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                alert(data.error);
+            } else {
+                document.getElementById("uploadedImage").src = data.image_url;
+                document.getElementById("uploadedImage").style.display = "block";
+                document.getElementById("description").innerText = "Description: " + data.description;
+            }
+        }
+    </script>
+</body>
+</html>
