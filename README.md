@@ -1,4 +1,4 @@
-⁷**Image Description Web Application**
+**Image Description Web Application**
 
 **Overview**
 
