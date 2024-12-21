@@ -33,3 +33,21 @@ Response: JSON containing the description of the image and the image URL. Exampl
 Cloud Deployment
 Deploy the app in render.
 Live website link - https://img-descr-arogo.onrender.com/
+
+**Running Locally**
+
+**Steps:**
+
+**Step1:** Clone the repository:
+
+**Step2:** git clone <repository-link> cd <repository-directory> 
+
+**Step3:** pip install -r requirements.txt 
+
+**Start the application:**
+
+python app.py 
+
+**Access the application locally:**
+
+Open your browser and navigate to http://127.0.0.1:5000
